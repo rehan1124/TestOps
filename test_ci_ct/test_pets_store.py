@@ -1,5 +1,6 @@
 import pytest
 from pytest_check import check
+from pprint import pprint
 
 import requests
 
@@ -15,13 +16,14 @@ class TestPets(BaseTest):
         with check:
             assert response.status_code == 200, "Incorrect HTTP code."
 
+        # print("Response:", pprint(response.json()))
+
+    @pytest.mark.stores
     def test_get_store_inventory(self):
         response = requests.get(url=self.base_url + self.store_get_inventory_url)
 
         with check:
-            assert response.status_code == 201, "Intentional fail."
+            assert response.status_code == 200, "Intentional fail."
 
-        print("--- Soft assertions in the test ---")
-
-        with check:
-            assert response.status_code == 202, "Incorrect HTTP code."
+        print("\n")
+        pprint(response.json())
