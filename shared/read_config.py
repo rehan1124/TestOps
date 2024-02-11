@@ -10,4 +10,4 @@ def read_config(category, key):
     config.read(filenames=filepath)
     return config.get(category, key)
 
-# print(read_config("DEFAULT", "Url"))
+# print(read_config("DEFAULT", "url"))
