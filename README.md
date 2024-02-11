@@ -14,3 +14,7 @@ python -m venv venv
 
 * To run tests in parallel, execute command `python -m pytest -v -s -n 4`. `-n` indicates number of tests to run in
   parallel at a time.
+
+* The framework also supports `adding tags/markers` to test.
+  Make use of `pytest.ini` to registers markers. Execute command `pytest -v -s -n 4 -m pets` to run tests marked
+  as `pets`.
